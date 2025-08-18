@@ -1,0 +1,20 @@
+package app.labs.ex03.di01;
+
+public class HelloMain {
+
+	public static void main(String[] args) {
+		// 1)
+//		HelloController controller = new HelloController();
+		
+		// 2) 생성자
+//		HelloController controller = new HelloController(new HelloServiceTest());
+		
+		// 3) Setter
+		HelloController controller = new HelloController();
+		controller.setHelloService(new HelloService());
+		
+		controller.hello("홍길동");
+
+	}
+
+}

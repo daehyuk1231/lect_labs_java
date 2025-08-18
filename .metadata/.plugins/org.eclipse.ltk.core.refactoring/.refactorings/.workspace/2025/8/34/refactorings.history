@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy Project &apos;java_web&apos;" description="Copy Project &apos;java_web&apos;" destination="/Users/bangdaehyeog/Documents/study/lect_labs/labs_java/workspace" element="/java_web" flags="7" id="org.eclipse.ltk.core.refactoring.copyproject.resource" name="springFW" stamp="1755486300879"/>
+</session>

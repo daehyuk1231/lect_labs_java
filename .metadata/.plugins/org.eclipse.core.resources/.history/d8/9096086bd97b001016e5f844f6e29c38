@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%--
+01. 영역객체
+ - page(한 페이지) < request(페이지 전달) < session(브라우저) < application(서블릿컨테이너)
+ --%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Scope</h1>
+<%
+	application.getAttribute("counter");
+%>
+</body>
+</html>
