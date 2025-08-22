@@ -1,0 +1,5 @@
+package app.labs.ex06.mvc02.hr.model;
+
+public class Emp {
+
+}

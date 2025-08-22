@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="app.labs.ex01.PassangerImpl"/>
     <fullyQualifiedTypeName name="app.labs.ex02.dp01.Singleton"/>
     <fullyQualifiedTypeName name="app.labs.ex02.dp02.RunningRace"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
@@ -21,7 +20,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericApplicationContext"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
@@ -47,7 +45,6 @@
     <fullyQualifiedTypeName name="app.labs.ex05.jdbc01.EmpVO"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="app.labs.ex06.mvc01.controller.NullHandler"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -56,4 +53,11 @@
     <fullyQualifiedTypeName name="java.util.Properties"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="app.labs.ex06.mvc01.controller.NullHandler"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 </qualifiedTypeNameHistroy>

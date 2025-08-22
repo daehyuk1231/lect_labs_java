@@ -1,0 +1,15 @@
+package app.labs.ex06.mvc02;
+
+import java.util.Locale;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+@Controller
+public class HomeController {
+
+	public String home(Model model, Locale locale) {
+		
+		return "";
+	}
+}
