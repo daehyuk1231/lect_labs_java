@@ -1,0 +1,18 @@
+package app.labs.ex03.di04;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import app.labs.ex03.di03.AppConfig;
+import app.labs.ex03.di03.HelloController;
+
+public class MemberMain {
+	public static void main(String[] args) {
+
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+		MemberController controller = context.getBean("memberController", MemberController.class);
+
+		context.close();
+	}
+}

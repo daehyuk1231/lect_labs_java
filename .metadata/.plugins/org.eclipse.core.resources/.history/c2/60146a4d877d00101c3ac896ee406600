@@ -1,0 +1,16 @@
+package app.labs.ex04.aop02;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class LogAspect {
+	// 핵심코드
+	@Pointcut(value="execution(* app.lobs.ex04.aop02.HelloService.sayHello(..)")
+	private void helloPointcut() {}
+	
+	@Pointcut(value="execution(* app.labs.ex04.aop02.HelloService.sayGoodbye(..)")
+	private void goodbyePointcut() {}
+}

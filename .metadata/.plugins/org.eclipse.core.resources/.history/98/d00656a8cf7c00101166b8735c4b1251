@@ -1,0 +1,5 @@
+package app.labs.ex04.aop01;
+
+public interface IHelloService {
+
+}

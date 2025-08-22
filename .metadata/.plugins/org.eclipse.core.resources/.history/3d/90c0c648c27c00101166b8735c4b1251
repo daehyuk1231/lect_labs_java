@@ -1,0 +1,11 @@
+package app.labs.ex03.di04;
+
+public class MemberService implements IMemberService {
+
+	@Override
+	public Member getMemberInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

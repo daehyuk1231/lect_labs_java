@@ -1,0 +1,32 @@
+package app.labs.ex04.aop02;
+
+import app.labs.ex03.di03.AppConfig;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class LogAspect {
+
+    private final AppConfig appConfig;
+
+    LogAspect(AppConfig appConfig) {
+        this.appConfig = appConfig;
+    }
+	// 핵심코드
+	@Pointcut(value="execution(* app.lobs.ex04.aop02.HelloService.sayHello(..)")
+	private void helloPointcut() {}
+	
+	@Pointcut(value="execution(* app.labs.ex04.aop02.HelloService.sayGoodBye(..)")
+	private void goodbyePointcut() {}
+	
+	// 공통코드(Aspect)
+	
+	public void beforeLog(JoinPoint joinpoint) {
+		System.out.println(">>> log:" + new java.util.Date());
+		
+	}
+}

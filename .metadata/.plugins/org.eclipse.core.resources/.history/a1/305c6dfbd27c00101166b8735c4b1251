@@ -1,0 +1,20 @@
+package app.labs.ex04.aop01;
+
+public class HelloService implements IHelloService {
+
+	@Override
+	public String sayHello(String name) {
+		System.out.println(">>>LOG : " + new java.util.Date());
+		String message = "Hello~~~ " + name;
+
+		return message;
+	}
+
+	@Override
+	public String sayGoodBye(String name) {
+		String message = "GoodBye~~~ " + name;
+
+		return message;
+	}
+
+}

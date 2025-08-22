@@ -1,0 +1,14 @@
+package app.labs.ex03.di04;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import app.labs.ex03.di03.AppConfig;
+
+public class MemberMain {
+	
+	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+	
+	context.close();
+
+}

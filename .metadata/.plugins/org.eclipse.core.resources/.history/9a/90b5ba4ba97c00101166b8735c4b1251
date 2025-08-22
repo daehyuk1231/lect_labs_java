@@ -1,0 +1,14 @@
+package app.labs.ex03.di03;
+
+import app.labs.ex03.di01.IHelloService;
+
+public class NiceService implements IHelloService {
+
+	@Override
+	public String sayHello(String name) {
+		System.out.println("helloService.sayHello() 메서드 실행");
+		String message = "Hello~~~~, " + name;
+		return message;
+	}
+
+}

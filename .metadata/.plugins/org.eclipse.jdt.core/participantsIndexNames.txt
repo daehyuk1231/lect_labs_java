@@ -3,3 +3,5 @@ INDEX VERSION 1.134
 /springFW/src/main/java
 /Users/bangdaehyeog/Documents/study/lect_labs/labs_java/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3152696109.index
 /java_web/src/main/java
+/Users/bangdaehyeog/Documents/study/lect_labs/labs_java/workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/730070038.index
+/springFW/src/main/java

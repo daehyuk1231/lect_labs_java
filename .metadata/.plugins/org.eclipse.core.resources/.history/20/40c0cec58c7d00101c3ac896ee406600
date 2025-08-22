@@ -1,0 +1,54 @@
+package app.labs.ex04.aop02;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class LogAspect {
+	// 핵심코드
+	@Pointcut(value = "execution(* app.labs.ex04.aop02.HelloService.sayHello(..))")
+	private void helloPointcut() {
+	}
+
+	@Pointcut(value = "execution(* app.labs.ex04.aop02.HelloService.sayGoodBye(..))")
+	private void goodbyePointcut() {
+	}
+
+	// 공통코드(Aspect + Advice) : Advisor
+	@Before("helloPointcut()") // Advice
+	public void beforeLog(JoinPoint joinpoint) { // Aspect
+		System.out.println(">>> log:" + new java.util.Date());
+	}
+
+	@AfterReturning(pointcut = "goodbyePointcut()", returning = "msg")
+	public void afterLog(JoinPoint joinpoint, Object msg) {
+		System.out.println(">>> log:" + new java.util.Date());
+		System.out.println(">>> msg:" + msg.toString());
+	}
+
+	public Object trace(ProceedingJoinPoint joinpoint) throws Throwable {
+
+		Signature s = joinpoint.getSignature();
+		String methodName = s.getName();
+		System.out.println("[Log]Before: " + methodName + " start");
+
+		long startTime = System.nanoTime();
+
+		Object result = null;
+
+		try {
+			result = joinpoint.proceed();
+		} catch (Exception e) {
+			System.out.println("[Log] Exception: " + methodName + e.getMessage());
+		} finally {
+			System.out.println("[Log] Exception: " + methodName + e.getMessage());
+		}
+	}
+}

@@ -1,0 +1,28 @@
+package app.labs.ex03.di04;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+
+import app.labs.ex03.di03.IHelloService;
+
+@Controller
+public class MemberController {
+	
+	@Autowired
+	private MemberService memberService;
+	
+	// 3) Setter
+	public MemberController() {}
+//	@Autowired
+	public void setHelloService(IMemberService memberService) {
+		this.memberService = helloService;
+//		this.niceService = helloService;
+	}
+
+	public void hello(String name) {
+		System.out.println("HelloController : " + helloService.sayHello(name));
+//		System.out.println("HelloController : " + niceService.sayHello(name));
+	}
+
+}

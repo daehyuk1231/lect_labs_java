@@ -1,0 +1,108 @@
+package app.labs.ex05.jdbc01;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmpRepository implements IEmpRepository {
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	// RowMapper
+	// table row 1개와 empvo를 컬럼명과 프로퍼티, 데이터 타입을 매칭하는 인터페이스
+	private class EmpMapper implements RowMapper<EmpVO> {
+
+		@Override
+		public EmpVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			EmpVO emp = new EmpVO();
+
+			emp.setEmployeeId(rs.getInt("EMPLOYEE_ID"));
+			emp.setFirstName(rs.getString("FIRST_NAME"));
+			emp.setLastName(rs.getString("LAST_NAME"));
+			emp.setEmail(rs.getString("EMAIL"));
+			emp.setPhoneNumber(rs.getString("PHONE_NUMBER"));
+			emp.setHireDate(rs.getDate("HIRE_DATE"));
+			emp.setJobId(rs.getString("JOB_ID"));
+			emp.setSalary(rs.getInt("SALARY"));
+			emp.setCommissionPct(rs.getInt("COMMISSION_PCT"));
+			emp.setManagerId(rs.getInt("MANAGER_ID"));
+			emp.setDepartmentId(rs.getInt("DEPARTMENT_ID"));
+
+			return emp;
+		}
+	}
+
+	@Override
+	public int getEmpCount() {
+		String sql = "select count(*) from employees";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
+	@Override
+	public int getEmpCount(int deptId) {
+		String sql = "select count(*) from employees where department_id=?";
+		return jdbcTemplate.queryForObject(sql, Integer.class, deptId);
+	}
+
+	@Override
+	public List<EmpVO> getEmpList() {
+		String sql = "select * from employees";
+		return jdbcTemplate.query(sql, new EmpMapper());
+	}
+
+	@Override
+	public EmpVO getEmpInfo(int empId) {
+		String sql = "select * from employees where employee_id=?";
+		return jdbcTemplate.queryForObject(sql, new EmpMapper(), empId);
+	}
+
+	@Override
+	public void insertEmp(EmpVO emp) {
+		String sql = "insert into employees "
+				+ "(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) "
+				+ "values " + "(?, ?, ?, ?, ?, sysdate, ?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sql, emp.getEmployeeId(), emp.getFirstName(), emp.getLastName(), emp.getEmail(),
+				emp.getPhoneNumber(), emp.getJobId(), emp.getSalary(), emp.getCommissionPct(), emp.getManagerId(),
+				emp.getDepartmentId());
+	}
+
+	@Override
+	public void updateEmp(EmpVO emp) {
+		String sql = "update employees " + "    set first_name=?, last_name=?, email=?, salary=? "
+				+ "where employee_id=?";
+		jdbcTemplate.update(sql, emp.getFirstName(), emp.getLastName(), emp.getEmail(), emp.getSalary(),
+				emp.getEmployeeId());
+	}
+
+	@Override
+	public int deleteEmp(int empId, String email) {
+		String sql = "delete from employees where employee_id=? and email=?";
+		return jdbcTemplate.update(sql, empId, email);
+	}
+
+	@Override
+	public void deleteJobHistory(int empId) {
+		String sql = "delete from job_history where employee_id=?";
+		jdbcTemplate.update(sql, empId);
+	}
+	
+	@Override
+	public List<Map<String, Object>> getAllDeptId() {
+		String sql = "select DEPARTMENT_ID as departmentId, DEPARTMENT_NAME as departmentName from departments";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	@Override
+	public List<Map<String, Object>> getAllJobId() {
+		String sql = "select DEPARTMENT_ID as departmentId, DEPARTMENT_NAME as departmentName from departments";
+		return jdbcTemplate.queryForList(sql);
+	}
+}

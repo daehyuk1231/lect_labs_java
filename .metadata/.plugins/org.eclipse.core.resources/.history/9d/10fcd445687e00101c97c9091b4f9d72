@@ -1,0 +1,8 @@
+package app.labs.ex06.mvc01.controller;
+
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpSession;
+
+public interface CommandHandler {
+	String process(HttpSession request, HttpServlet response);
+}

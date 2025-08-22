@@ -2,6 +2,20 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
   <display-name>java_web</display-name>
   
+  <!-- Servlet MVC -->
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>app.labs.ex06.mvc01.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>configFile</param-name>
+            <param-value>/WEB-INF/classes/config/mvc01/command.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+  
   <servlet>
   	<servlet-name>HelloWorld</servlet-name>
   	<servlet-class>app.labs.servlet.HelloWorld</servlet-class>

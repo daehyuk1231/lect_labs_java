@@ -1,0 +1,17 @@
+package app.labs.ex04.aop01;
+
+import org.aspectj.lang.JoinPoint;
+
+public class HelloLog {
+
+	// class Method
+	public static void log() {
+		System.out.println(">>> LOG:" + new java.util.Date());
+	}
+	
+	public void resultLog(JoinPoint joinpoint) {
+		Signature signature = joinpoint.getSignature();
+		String methodName = signature.getName();
+		System.out.println(">>>RESULT LOG <<< : 핵심코드 메서드명: - " + methodName;
+	}
+}

@@ -1,0 +1,5 @@
+package app.labs.ex05.jdbc01;
+
+public interface IEmpRepository {
+
+}

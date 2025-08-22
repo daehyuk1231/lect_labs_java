@@ -1,0 +1,19 @@
+package app.labs.ex03.di04;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+public class MemberController {
+	
+	private IMemberService memberService;
+	
+	public void setMemberService(IMemberService memberService) {
+        this.memberService = memberService;
+    }
+	
+	public void showMemberInfo() {
+        Member member = memberService.getMemberInfo();
+        System.out.println(member);
+    }
+
+}

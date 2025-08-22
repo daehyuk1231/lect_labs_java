@@ -1,0 +1,77 @@
+package app.labs.ex05.jdbc01;
+
+import java.sql.ResultSet;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmpRepository implements IEmpRepository {
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	// RowMapper
+	// table row 1개와 empvo를 컬럼명과 프로퍼티, 데이터 타입을 매칭하는 인터페이스
+	private class EmpMapper implements RowMapper<EmpVO> {
+		
+		@Override
+		public EmpVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			EmpVO emp = new EmpVO();
+			
+			emp.setEmployeeId(rs.getInt("EMPLOYEE_ID"));
+			
+			return emp;
+		}
+	}
+	
+	@Override
+	public int getEmpCount() {
+		String sql = "select count(*) from employees";
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+
+	@Override
+	public int getEmpCount(int deptId) {
+		String sql = "select count(*) from employees where department_id=?";
+		return jdbcTemplate.queryForObject(sql, Integer.class, deptId);
+	}
+
+	@Override
+	public List<EmpVO> getEmpList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmpVO getEmpInfo(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertEmp(EmpVO emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateEmp(EmpVO emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public int deleteEmp(int empId, String email) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteJobHistory(int empId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
