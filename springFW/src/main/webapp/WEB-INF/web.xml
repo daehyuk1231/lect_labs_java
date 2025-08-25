@@ -25,36 +25,42 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-            /WEB-INF/spring/mvc02/root-context.xml
+            <!-- /WEB-INF/spring/mvc02/root-context.xml -->
+            /WEB-INF/spring/fileupload/root-context.xml
         </param-value>
 	</context-param>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
-	<servlet>
-        <servlet-name>appServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>
-                /WEB-INF/spring/mvc02/servlet-context.xml
-            </param-value>
-        </init-param>
-        <load-on-startup>1</load-on-startup>
 
-        <!-- spring 6.x -->
-        <multipart-config>
-            <max-file-size>31457280</max-file-size>   <!-- 30mb-->
-            <max-request-size>1004857600</max-request-size>  <!-- 100mb -->
-        </multipart-config>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>appServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+                <!-- /WEB-INF/spring/mvc02/servlet-context.xml -->
+                /WEB-INF/spring/fileupload/servlet-context.xml
+            </param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+
+		<!-- spring 6.x -->
+		<multipart-config>
+			<max-file-size>31457280</max-file-size>   <!-- 30mb -->
+			<max-request-size>1004857600</max-request-size>  <!-- 100mb -->
+		</multipart-config>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- <error-page> <error-code>500</error-code> <location>/WEB-INF/views/mvc02/error/runtime.jsp</location> 
+		</error-page> <error-page> <error-code>404</error-code> <location>/WEB-INF/views/mvc02/error/runtime.jsp</location> 
+		</error-page> -->
 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

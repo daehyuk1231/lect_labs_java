@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan
+		base-package="app.labs.ex06.mvc02" />
 	<annotation-driven /> <!-- 기본설정 사용 -->
 
 	<!-- get 경로 매핑 -->
@@ -20,6 +22,14 @@
 			value="/WEB-INF/views/mvc02/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
+	
+	<interceptors>
+        <interceptor>
+            <mapping path="/hr/**"/>
+            <exclude-mapping path="/hr/insert"/>
+            <beans:bean class="app.labs.ex06.mvc02.PageViewLogInterceptor"/>
+        </interceptor>
+    </interceptors>
 
 	<beans:bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">

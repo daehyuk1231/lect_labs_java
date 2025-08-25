@@ -10,7 +10,8 @@
 <body>
 	<div style="width: 900px; margin-left: auto; margin-right: auto;">
 		<h1>사원목록</h1>
-		<a href="">신규사원등록</a> <!-- /hr/insert -->
+		<a href="c:url value='/hr/insert'/>">신규사원등록</a> <!-- /hr/insert -->
+		${message }
 		<table border="1">
 			<thead>
 				<tr>
