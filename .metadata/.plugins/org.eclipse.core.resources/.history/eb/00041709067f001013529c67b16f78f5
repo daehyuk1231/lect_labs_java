@@ -1,0 +1,21 @@
+package app.labs.ex06.mvc02.hr.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import app.labs.ex06.mvc02.hr.service.IEmpService;
+
+@Controller
+public class EmpController {
+
+	@Autowired
+	IEmpService empService;
+
+	public String empCount(Model model) {
+		
+		int cnt = empService.getEmpCount();
+		
+		return "hr/count";
+	}
+}

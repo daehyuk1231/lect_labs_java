@@ -1,6 +1,8 @@
 package app.labs.ex06.mvc02.hr.model;
 
-import java.sql.Date;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +24,8 @@ public class Emp {
     private String lastName;
     private String email;
     private String phoneNumber;
+    // <annotation-driven />:java.util.Date
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date hireDate;
     private String jobId;
     private double salary;

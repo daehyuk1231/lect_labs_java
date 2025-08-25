@@ -1,0 +1,5 @@
+package app.labs.ex06.mvc02.hr.controller;
+
+public class EmpController {
+
+}
