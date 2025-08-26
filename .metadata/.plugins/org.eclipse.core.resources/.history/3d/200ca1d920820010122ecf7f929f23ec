@@ -1,0 +1,15 @@
+package app.labs.ex07.fileupload.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import app.labs.ex07.fileupload.service.IUploadFileService;
+
+@Controller
+public class UploadFileController {
+
+	@Autowired
+	IUploadFileService uploadFileService;
+	
+	public String getIndex(Model model);
+}

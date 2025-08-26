@@ -1,0 +1,11 @@
+package app.labs.ex03.di01;
+
+public class HelloService implements IHelloService {
+
+	@Override
+	public String sayHello(String name) {
+		System.out.println("helloService.sayHello() 메서드 실행");
+		return null;
+	}
+
+}

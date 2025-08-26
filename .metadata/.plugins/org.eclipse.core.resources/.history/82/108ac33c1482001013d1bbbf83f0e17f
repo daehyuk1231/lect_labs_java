@@ -1,0 +1,5 @@
+package app.labs.ex07.fileupload.model;
+
+public class UploadFile {
+
+}

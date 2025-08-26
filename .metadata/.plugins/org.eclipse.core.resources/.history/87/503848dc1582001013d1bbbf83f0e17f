@@ -1,0 +1,64 @@
+package app.labs.ex07.fileupload.dao;
+
+import java.util.HashMap;
+import java.util.List;
+
+import app.labs.ex07.fileupload.model.UploadFile;
+
+public class UploadFileRepository implements IUploadFileRepository {
+
+	@Override
+	public int getMaxFileId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void uploadFile(UploadFile file) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<UploadFile> getFileList(String directoryName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UploadFile> getAllFileList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UploadFile> getImageList(String directoryName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UploadFile getFile(int fileId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDirectoryName(int fileId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateDirectory(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteFile(int fileId) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

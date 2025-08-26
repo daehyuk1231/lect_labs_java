@@ -1,0 +1,11 @@
+package app.labs.ex07.fileupload.model;
+
+public class UploadFile {
+	private int fileId;
+    private String directoryName;
+    private String fileName;
+    private long fileSize;
+    private String fileContentType;
+    private Timestamp fileUploadDate;
+    private byte[] fileData;
+}

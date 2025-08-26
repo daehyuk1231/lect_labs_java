@@ -1,0 +1,88 @@
+package app.labs.ex07.fileupload.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import app.labs.ex07.fileupload.model.UploadFile;
+
+@Repository
+public class UploadFileRepository implements IUploadFileRepository {
+
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+RowMapper<UploadFile> {
+
+		@Override
+		public EmpVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			EmpVO emp = new EmpVO();
+
+			emp.setEmployeeId(rs.getInt("EMPLOYEE_ID"));
+			emp.setFirstName(rs.getString("FIRST_NAME"));
+			emp.setLastName(rs.getString("LAST_NAME"));
+			emp.setEmail(rs.getString("EMAIL"));
+			emp.setPhoneNumber(rs.getString("PHONE_NUMBER"));
+			emp.setHireDate(rs.getDate("HIRE_DATE"));
+			emp.setJobId(rs.getString("JOB_ID"));
+			emp.setSalary(rs.getInt("SALARY"));
+			emp.setCommissionPct(rs.getInt("COMMISSION_PCT"));
+			emp.setManagerId(rs.getInt("MANAGER_ID"));
+			emp.setDepartmentId(rs.getInt("DEPARTMENT_ID"));
+
+			return emp;
+		}
+	}
+
+	@Override
+	public int getMaxFileId() {
+		return 0;
+	}
+
+	@Override
+	public void uploadFile(UploadFile file) {
+
+	}
+
+	@Override
+	public List<UploadFile> getFileList(String directoryName) {
+		return null;
+	}
+
+	@Override
+	public List<UploadFile> getAllFileList() {
+		return null;
+	}
+
+	@Override
+	public List<UploadFile> getImageList(String directoryName) {
+		return null;
+	}
+
+	@Override
+	public UploadFile getFile(int fileId) {
+		return null;
+	}
+
+	@Override
+	public String getDirectoryName(int fileId) {
+		return null;
+	}
+
+	@Override
+	public void updateDirectory(HashMap<String, Object> map) {
+
+	}
+
+	@Override
+	public void deleteFile(int fileId) {
+
+	}
+
+}
