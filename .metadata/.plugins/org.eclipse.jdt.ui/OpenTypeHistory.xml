@@ -11,4 +11,5 @@
     <typeInfo handle="=springFW/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;app.labs.ex05.jdbc01{IEmpRepository.java[IEmpRepository" modifiers="513" timestamp="1755754115000"/>
     <typeInfo handle="=springFW/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;app.labs.ex05.jdbc01{IEmpService.java[IEmpService" modifiers="513" timestamp="1755754227000"/>
     <typeInfo handle="=springFW/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;app.labs.ex06.mvc01.controller{CommandHandler.java[CommandHandler" modifiers="513" timestamp="1755764676000"/>
+    <typeInfo handle="=springBtWeb/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;app.labs.ex01{TemplateService.java[TemplateService" modifiers="513" timestamp="1756344645000"/>
 </typeInfoHistroy>

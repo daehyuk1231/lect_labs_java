@@ -1,5 +1,0 @@
-package app.labs.ex04.aop02;
-
-public class LogAspect {
-
-}

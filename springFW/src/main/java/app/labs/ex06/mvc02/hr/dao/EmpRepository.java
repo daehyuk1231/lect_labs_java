@@ -111,7 +111,7 @@ public class EmpRepository implements IEmpRepository {
 	@Override
 	public List<Map<String, Object>> getAllManagerId() {
 		String sql = "select distinct e1.manager_id, e2.first_name as manager_name " + "  from employees e1 "
-				+ "  join employees e2 on e2.employee_id = e1.manager_id " + "order by e1.manager_id";
+				+ "  join employees e2 on e2.employee_id = e1.manager_id " + "order by manager_name";
 		return jdbcTemplate.queryForList(sql);
 	}
 }

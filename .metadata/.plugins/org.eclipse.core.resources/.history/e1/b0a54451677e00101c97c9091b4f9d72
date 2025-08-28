@@ -1,5 +1,0 @@
-package app.labs.ex06.mvc01.controller;
-
-public interface CommandHandler {
-
-}
