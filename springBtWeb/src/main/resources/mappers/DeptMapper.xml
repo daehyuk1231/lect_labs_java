@@ -4,58 +4,43 @@
 <mapper namespace="app.labs.dept.dao.DeptRepository">
 
 	<select id="getDeptCount" parameterType="int" resultType="int">
-		select count(*) from employees
-		<if test="deptId != null">
-			where department_id=#{deptId} <!-- 파라메터명 기준 -->
+		select count(*) from dept
+		<if test="deptNo != null">
+			where deptno=#{deptNo} <!-- 파라메터명 기준 -->
 		</if>
 	</select>
 
 	<select id="getDeptList" resultType="app.labs.dept.model.Dept">
-		select * from employees
+		select * from dept
 	</select>
 
 	<select id="getDeptInfo" parameterType="int"
 		resultType="app.labs.dept.model.Dept">
-		SELECT EMPLOYEE_ID AS employeeId,
-		FIRST_NAME AS firstName,
-		LAST_NAME AS lastName,
-		EMAIL AS email,
-		PHONE_NUMBER AS phoneNumber,
-		TO_CHAR(HIRE_DATE, 'yyyy-mm-dd') AS hireDate,
-		JOB_ID AS jobId,
-		SALARY AS
-		salary,
-		COMMISSION_PCT AS commissionPct,
-		MANAGER_ID AS managerId,
-		DEPARTMENT_ID AS departmentId
-		FROM EMPLOYEES
-		WHERE EMPLOYEE_ID =
-		#{empId}
+		SELECT deptno, dname, loc
+		FROM dept
+		WHERE deptno =
+		#{deptNo}
 	</select>
 
-	<insert id="insertDept"
-		parameterType="app.labs.dept.model.Dept">
-		insert into employees
-		(employee_id, first_name,
-		last_name, email, phone_number, hire_date, job_id, salary,
-		commission_pct, manager_id, department_id)
+	<insert id="insertDept" parameterType="app.labs.dept.model.Dept">
+		insert into dept
+		(deptno,
+		dname, loc)
 		values
-		(#{employeeId},
-		#{firstName}, #{lastName}, #{email}, #{phoneNumber}, sysdate,
-		#{jobId}, #{salary}, #{commissionPct}, #{managerId}, #{departmentId})
+		(#{deptNo},
+		#{dName}, #{loc})
 	</insert>
 
-	<update id="updateDept"
-		parameterType="app.labs.dept.model.Dept">
-		update employees
-		set first_name=#{firstName}, last_name=#{lastName}, email=#{email}, salary=#{salary}
-		where employee_id=#{employeeId}
+	<update id="updateDept" parameterType="app.labs.dept.model.Dept">
+		update dept
+		set
+		dname=#{dName}, loc=#{loc}
+		where deptno=#{deptNo}
 	</update>
 
 	<delete id="deleteDept">
-		delete from employees
-		where employee_id=#{employeeId}
-		and email=#{email}
+		delete from dept
+		where deptno=#{deptNo}
 	</delete>
 
 </mapper>
