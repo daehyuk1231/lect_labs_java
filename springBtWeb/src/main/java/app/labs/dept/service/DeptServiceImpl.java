@@ -13,7 +13,7 @@ public class DeptServiceImpl implements DeptService {
 
 	@Autowired
 	DeptRepository deptRepository;
-	
+
 	@Override
 	public int getDeptCount() {
 		return deptRepository.getDeptCount();
