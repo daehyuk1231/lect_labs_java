@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Login Page</h3>
+	<div>
+		<a href="/main">메인페이지</a>
+	</div>
+	<div>[[ ${message} ]]</div>
+	<hr>
+	<!-- 4. HTTP Basic auth 실습 -->
+	<form th:action="@{/login}" method="post" action="">
+		<ul>
+			<li><input type="text" name="userid" id="id"></li>
+			<li><input type="password" name="password" id="pw"></li>
+			<li><input type="submit" value="로그인"> <input
+				type="reset" value="초기화"></li>
+		</ul>
+	</form>
+</body>
+</html>

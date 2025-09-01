@@ -32,5 +32,17 @@
 		<li><a href="/logout">로그아웃</a></li>
 		<li><a href="/login?error">로그인에러</a></li>
 	</ul>
+
+	<h4>로그인 정보</h4>
+	<ul>
+		<li>인증상태: <span sec:authorize="isAnonymous()">[인증안됨]</span> <span
+			sec:authorize="isAuthenticated()">[인증됨]</span>
+		</li>
+		<li><div sec:authentication="principal"></div></li>
+		<li sec:authorize="isAuthenticated()">
+			<div sec:authentication="principal.Username"></div>
+			<div sec:authentication="principal.UserEmail"></div>
+		</li>
+	</ul>
 </body>
 </html>

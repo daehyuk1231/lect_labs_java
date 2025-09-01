@@ -9,7 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 
-// 1. username, userpassword, role에 관련된 사용자정보를 스프링 시큐리티에 적합하게 변환
+// 1. username, userpassword, role에 관련된 사용자정보를 스프링 시큐리티에 적합하게 변환하는 클래스
 public class CustomUserDetails implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
