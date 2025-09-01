@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.container {
+	display: flex;
+	width: 500px;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
+.container li {
+	/* item /
+                flex: 1 1 auto;
+                / flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+	
+}
+</style>
+</head>
+<body>
+	<h3>Main Page</h3>
+	<div>
+		<a href="/sub">서브페이지</a>
+	</div>
+	<hr>
+	<h4>HTTP Basic Auth</h4>
+	<ul class="container">
+		<li><a href="/login">로그인</a></li>
+		<li><a href="/logout">로그아웃</a></li>
+		<li><a href="/login?error">로그인에러</a></li>
+	</ul>
+</body>
+</html>
